@@ -1,0 +1,15 @@
+pipeline {	
+   agent any
+   stages {
+	stage('Package the build output') {
+		steps {
+			script {
+				def props = readJson file: "${WORKSPACE}/config.json", text: ''
+				version = props["version"]
+				env.PACKAGE_VERSION=version
+			}
+			echo "The package version will be ${PACKAGE_VERSION}"
+		}
+	}
+   }
+}
