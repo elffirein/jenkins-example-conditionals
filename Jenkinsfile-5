@@ -8,7 +8,7 @@ pipeline {
 				version = props["version"]
 				env.PACKAGE_VERSION=version
 			}
-			echo "The package version will be ${env.PACKAGE_VERSION}"
+			echo "The package version will be ${props}"
 		}
 	}
    }
