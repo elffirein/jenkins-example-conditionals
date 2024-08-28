@@ -4,7 +4,7 @@ pipeline {
 	stage('Package the build output') {
 		steps {
 			script {
-				def props = readJson file: "${WORKSPACE}/config.json", text: ''
+				def props = readJSON file: "${WORKSPACE}/config.json"
 				version = props["version"]
 				env.PACKAGE_VERSION=version
 			}
